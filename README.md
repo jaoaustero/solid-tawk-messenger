@@ -1,33 +1,74 @@
-## Usage
+<h1 align="center">
+    Notice: Still Under Development
+</h1>
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+<br/><br/>
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+<p align="center">
+    <a href="https://www.tawk.to/"
+    target="_blank"
+    rel="noopener noreferrer">
+        <img width="120"
+            src="https://www.tawk.to/wp-content/uploads/2020/04/tawk-sitelogo.png"
+            alt="Tawk logo">
+    </a>
+</p>
 
+<h1 align="center">
+    Tawk messenger for Solid
+</h1>
+
+> A plugin for SolidJS framework of [tawk.to](https://www.tawk.to/) messenger.
+
+<br/>
+
+## Features
+- Documented and Self explaining methods
+- Small size without any external libraries
+- All Javascript API are avaiable
+
+<br/>
+
+## Installation
+The plugin are available in node and yarn package managers.
 ```bash
-$ npm install # or pnpm install or yarn install
+# Node
+npm install solid-tawk-messenger
+
+# Yarn
+yarn add solid-tawk-messenger
 ```
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+## Quickstart
+Import the **solid-tawk-messenger** in your main component. The **propertyId** and **widgetId** will
+be found on your tawk dashboard **Administration > Chat Widget**.
 
-### `npm dev` or `npm start`
+```js
+import SolidTawkMessenger from 'solid-tawk-messenger';
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+function App() {
+    return (
+        <TawkMessenger
+            propertyId="property_id"
+            widgetId="widget_id"/>
+    )
+}
+```
 
-The page will reload if you make edits.<br>
+<br/>
 
-### `npm run build`
+## Documentation
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
+This project includes a `docs` folder with more details on:
+1.  [SPA setup](docs/spa-setup.md)
+1.  [SSR setup](docs/ssr-setup.md)
+1.  [API Reference](docs/api-reference.md)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+<br/>
 
-## Deployment
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+## License
+
+Code released under [MIT](https://github.com/jaoaustero/solid-tawk-messenger/blob/main/LICENSE) license.
