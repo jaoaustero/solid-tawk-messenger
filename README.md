@@ -4,21 +4,7 @@
 
 <br/><br/>
 
-<p align="center">
-    <a href="https://www.tawk.to/"
-    target="_blank"
-    rel="noopener noreferrer">
-        <img width="120"
-            src="https://www.tawk.to/wp-content/uploads/2020/04/tawk-sitelogo.png"
-            alt="Tawk logo">
-    </a>
-</p>
-
-<h1 align="center">
-    Tawk messenger for Solid
-</h1>
-
-> A plugin for SolidJS framework of [tawk.to](https://www.tawk.to/) messenger.
+# ![solid-headless](/images/banner.jpg)
 
 <br/>
 
@@ -26,6 +12,7 @@
 - Documented and Self explaining methods
 - Small size without any external libraries
 - All Javascript API are avaiable
+- Maintained by Senior Front-end Developer of [tawk.to](https://www.tawk.to)
 
 <br/>
 
@@ -46,7 +33,7 @@ Import the **solid-tawk-messenger** in your main component. The **propertyId** a
 be found on your tawk dashboard **Administration > Chat Widget**.
 
 ```js
-import SolidTawkMessenger from 'solid-tawk-messenger';
+import TawkMessenger from 'solid-tawk-messenger';
 
 function App() {
     return (
@@ -62,8 +49,7 @@ function App() {
 ## Documentation
 
 This project includes a `docs` folder with more details on:
-1.  [SPA setup](docs/spa-setup.md)
-1.  [SSR setup](docs/ssr-setup.md)
+1.  [How to Use](docs/how-to-use.md)
 1.  [API Reference](docs/api-reference.md)
 
 <br/>
