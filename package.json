@@ -2,6 +2,9 @@
   "name": "solid-tawk-messenger",
   "version": "0.1.0",
   "description": "SolidJS plugin for Tawk messenger",
+  "keywords": ["tawk", "tawkto", "solidjs", "solid-tawk", "solidjs-tawk"],
+  "homepage": "https://github.com/jaoaustero/solid-tawk-messenger#readme",
+  "author": "Jerald Austero <jerald.austero0229@gmail.com> (https://twitter.com/jaoaustero)",
   "files": [
     "dist"
   ],
