@@ -2,7 +2,9 @@
   "name": "solid-tawk-messenger",
   "version": "1.0.0",
   "description": "SolidJS plugin for Tawk messenger",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/solid-tawk-messenger.umd.js",
   "module": "./dist/solid-tawk-messenger.es.js",
   "exports": {
@@ -20,6 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-preset-solid": "^1.2.6",
+    "prettier": "^2.5.1",
     "vite": "^2.7.3",
     "vite-plugin-solid": "^2.1.4"
   },
@@ -30,5 +33,5 @@
     "type": "git",
     "url": "https://github.com/jaoaustero/solid-tawk-messenger.git",
     "repository": "jaoaustero/solid-tawk-messenger"
-  } 
+  }
 }

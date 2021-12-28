@@ -10,7 +10,7 @@ const loadScript = ({ propertyId = '', widgetId = '', embedId = '' }) => {
 		 * If the element with embedId as id we will create a new clement
 		 */
 		if (!document.getElementById(embedId)) {
-			const element = document.createElement("div");
+			const element = document.createElement('div');
 			element.id = embedId;
 
 			document.body.appendChild(element);
