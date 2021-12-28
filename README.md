@@ -1,9 +1,3 @@
-<h1 align="center">
-    Notice: Still Under Development
-</h1>
-
-<br/><br/>
-
 # ![solid-headless](/images/banner.jpg)
 
 <br/>
