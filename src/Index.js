@@ -7,47 +7,58 @@ import { loadScript } from "./utils/widget";
 
 const TawkMessenger = (props) => {
     const merged = mergeProps(
-        {
-            /**
-             * Default properties
-             */
-            propertyId : '',
-            widgetId : '',
+		{
+			/**
+			 * Default properties
+			 */
+			propertyId: "",
+			widgetId: "",
 
-            /**
-             * Custom style
-             */
-            customStyle: {},
+			/**
+			 * Target element
+			 */
+			embedId: "",
 
-            /**
-             * Callbacks
-             */
-            onLoad : () => {},
-            onStatusChange : () => {},
-            onBeforeLoad : () => {},
-            onChatMaximized : () => {},
-            onChatMinimized : () => {},
-            onChatHidden : () => {},
-            onChatStarted : () => {},
-            onChatEnded : () => {},
-            onPrechatSubmit : () => {},
-            onOfflineSubmit : () => {},
-            onChatMessageVisitor : () => {},
-            onChatMessageAgent : () => {},
-            onChatMessageSystem : () => {},
-            onAgentJoinChat : () => {},
-            onAgentLeaveChat : () => {},
-            onChatSatisfaction : () => {},
-            onVisitorNameChanged : () => {},
-            onFileUpload : () => {},
-            onTagsUpdated : () => {}
-        },
-        props
-    );
+			/**
+			 * Custom style
+			 */
+			customStyle: {},
 
+			/**
+			 * Reference
+			 */
+			ref: () => {},
 
-    onMount(() => {
-        load();
+			/**
+			 * Callbacks
+			 */
+			onLoad: () => {},
+			onStatusChange: () => {},
+			onBeforeLoad: () => {},
+			onChatMaximized: () => {},
+			onChatMinimized: () => {},
+			onChatHidden: () => {},
+			onChatStarted: () => {},
+			onChatEnded: () => {},
+			onPrechatSubmit: () => {},
+			onOfflineSubmit: () => {},
+			onChatMessageVisitor: () => {},
+			onChatMessageAgent: () => {},
+			onChatMessageSystem: () => {},
+			onAgentJoinChat: () => {},
+			onAgentLeaveChat: () => {},
+			onChatSatisfaction: () => {},
+			onVisitorNameChanged: () => {},
+			onFileUpload: () => {},
+			onTagsUpdated: () => {},
+			onUnreadCountChanged: () => {}
+		},
+		props
+	);
+	
+
+	onMount(() => {
+		load();
     });
 
 
@@ -57,7 +68,7 @@ const TawkMessenger = (props) => {
     });
 
 
-    const load = () => {
+	const load = () => {
         if (!isValidString(String, merged.propertyId)) {
 			console.error('[Tawk-messenger-solid warn]: You didn\'t specified \'propertyId\' property in the plugin.');
 			return;
@@ -88,7 +99,8 @@ const TawkMessenger = (props) => {
 		 */
         loadScript({
             propertyId : merged.propertyId,
-            widgetId : merged.widgetId
+			widgetId: merged.widgetId,
+			embedId: merged.embedId
         });
 
         mapCallbacks();
@@ -175,6 +187,10 @@ const TawkMessenger = (props) => {
 		window.addEventListener('tawkTagsUpdated', (data) => {
 			merged.onTagsUpdated(data.detail);
 		});
+
+		window.addEventListener("tawkUnreadCountChanged", (data) => {
+			merged.onUnreadCountChanged(data.detail);
+		});
     };
 
 
@@ -204,7 +220,9 @@ const TawkMessenger = (props) => {
 		isChatHidden : () => window.Tawk_API.isChatHidden(),
 		isChatOngoing : () => window.Tawk_API.isChatOngoing(),
 		isVisitorEngaged : () => window.Tawk_API.isVisitorEngaged(),
-		onLoaded : () => window.Tawk_API.onLoaded
+		onLoaded: () => window.Tawk_API.onLoaded,
+		onBeforeLoaded: () => window.Tawk_API.onBeforeLoaded,
+		widgetPosition: () => window.Tawk_API.widgetPosition()
     };
 
 

@@ -28,6 +28,7 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
 - [onVisitorNameChanged](#onvisitornamechanged)
 - [onFileUpload](#onfileupload)
 - [onTagsUpdated](#ontagsupdated)
+- [onUnreadCountChanged](#onunreadcountchanged)
 - [visitor](#visitor)
 - [maximize](#maximize)
 - [minimize](#minimize)
@@ -43,6 +44,9 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
 - [isChatHidden](#ischathidden)
 - [isChatOngoing](#ischatongoing)
 - [isVisitorEngaged](#isvisitorengaged)
+- [onLoaded](#onloaded)
+- [onBeforeLoaded](#onbeforeloaded)
+- [widgetPosition](#widgetposition)
 - [endChat](#endchat)
 - [setAttributes](#setattributes)
 - [addEvent](#addevent)
@@ -446,6 +450,26 @@ function App() {
         <div>
             <TawkMessenger
                 onTagsUpdated={onTagsUpdated}/>
+        </div>
+    );
+}
+```
+
+<br/>
+
+## onUnreadCountChanged
+Callback function that returns count of unread messages.
+
+```js
+function App() {
+    const onUnreadCountChanged = (count) => {
+        // place your code here
+    }
+
+    return (
+        <div>
+            <TawkMessenger
+                onUnreadCountChanged={onUnreadCountChanged}/>
         </div>
     );
 }
@@ -879,6 +903,91 @@ function App() {
     const onLoad = () => {
         if ($tawkMessenger.isVisitorEngaged()) {
             // do something if visitor engaged in chat
+        }
+    };
+
+    return (
+        <div>
+            <TawkMessenger
+                onLoad={onLoad}
+                ref={$tawkMessenger}/>
+        </div>
+    );
+}
+```
+
+<br/>
+
+## onLoaded
+Returns a value (true or undefined) indicating when the plugin is ready.
+
+```js
+$tawkMessenger.onLoaded();
+
+// Example
+
+function App() {
+    let $tawkMessenger;
+
+    const todo = () => {
+        if ($tawkMessenger.onLoaded()) {
+            // place your code here
+        }
+    };
+
+    return (
+        <div>
+            <TawkMessenger
+                ref={$tawkMessenger}/>
+        </div>
+    );
+}
+```
+
+<br/>
+
+## onBeforeLoaded
+Returns a value (true or undefined) indicating when plugin is initialize.
+
+```js
+$tawkMessenger.onBeforeLoaded();
+
+// Example
+
+function App() {
+    let $tawkMessenger;
+
+    const todo = () => {
+        if ($tawkMessenger.onBeforeLoaded()) {
+            // place your code here
+        }
+    };
+
+    return (
+        <div>
+            <TawkMessenger
+                ref={$tawkMessenger}/>
+        </div>
+    );
+}
+```
+
+<br/>
+
+## widgetPosition
+Returns a string for current position of the widget.
+
+```js
+$tawkMessenger.widgetPosition();
+
+// Example
+
+function App() {
+    let $tawkMessenger;
+
+    const onLoad = () => {
+        if ($tawkMessenger.widgetPosition() === 'br') {
+            // do something if the widget is at bottom right
         }
     };
 
