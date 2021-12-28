@@ -1,6 +1,6 @@
 {
   "name": "solid-tawk-messenger",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "SolidJS plugin for Tawk messenger",
   "files": [
     "dist"
