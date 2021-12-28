@@ -1262,36 +1262,102 @@ object in a function, as the values need to be available before the widget scrip
 Setting or changing the values after the widget script has been downloaded will not update the
 widget’s style.
 
+### zIndex
 ```js
-<TawkMessenger
-    customStyle={{ zIndex : Integer|String }}/>
+function App() {
+    const customStyle = {
+        zIndex : Integer|String
+    };
+
+    return (
+        <TawkMessenger
+            customStyle={ customStyle }/>
+    );
+}
 
 // Example
 
 function App() {
+    const customStyle = {
+        zIndex : 1000
+    };
+
     return (
-        <div>
-            <TawkMessenger
-                customStyle={{ zIndex : 1000 }}/>
-        </div>
+        <TawkMessenger
+            customStyle={ customStyle }/>
     );
 }
 
 function App() {
+    const customStyle = {
+        zIndex : '1000'
+    };
+
     return (
-        <div>
-            <TawkMessenger
-                customStyle={{ zIndex : '1000' }}/>
-        </div>
+        <TawkMessenger
+            customStyle={ customStyle }/>
     );
 }
 
 function App() {
+    const customStyle = {
+        zIndex : '1000 !important'
+    };
+
     return (
-        <div>
-            <TawkMessenger
-                customStyle={{ zIndex : '1000 !important' }}/>
-        </div>
+        <TawkMessenger
+            customStyle={ customStyle }/>
     );
 }
 ```
+
+### Visibility
+```js
+function App() {
+    const customStyle = {
+        visibility : {
+            desktop : {
+                xOffset : String | Integer, // '20' || 20
+                yOffset : String | Integer,
+                position : '' // 'br', 'bl', 'cr', 'cl', 'tr', 'tl'
+            },
+            mobile : {
+                xOffset : String | Integer, // '20' || 20
+                yOffset : String | Integer,
+                position : '' // 'br', 'bl', 'cr', 'cl', 'tr', 'tl'
+            }
+        }
+    };
+
+    return (
+        <div>
+            <TawkMessenger
+                customStyle={ customStyle }/>
+        </div>
+    );
+}
+
+// Example
+function App() {
+    const customStyle = {
+        visibility : {
+            desktop : {
+                xOffset : '15',
+                yOffset : '15',
+                position : 'cr'
+            },
+            mobile : {
+                xOffset : 15,
+                yOffset : 15,
+                position : 'bl'
+            }
+        }
+    };
+
+    return (
+        <div>
+            <TawkMessenger
+                customStyle={ customStyle }/>
+        </div>
+    );
+}
