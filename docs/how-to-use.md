@@ -33,15 +33,17 @@ Using the API callbacks, simply pass a function props then it will emit by the p
 
 ```js
 function App() {
-    const onLoad = () => {
+    let $tawkMessenger;
+    
+    $tawkMessenger.onLoad(() => {
         // place your code here
-    };
+    });
 
     return (
         <TawkMessenger
             propertyId="property_id"
             widgetId="widget_id"
-            onLoad={onLoad}}/>
+            ref={$tawkMessenger}}/>
     );
 }
 ```

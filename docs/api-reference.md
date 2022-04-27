@@ -9,51 +9,55 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
 <br/>
 
 ## Table of contents
-- [onLoad](#onload)
-- [onStatusChange](#onstatuschange)
-- [onBeforeLoad](#onbeforeload)
-- [onChatMaximized](#onchatmaximized)
-- [onChatMinimized](#onchatminimized)
-- [onChatHidden](#onchathidden)
-- [onChatStarted](#onchatstarted)
-- [onChatEnded](#onchatended)
-- [onPrechatSubmit](#onprechatsubmit)
-- [onOfflineSubmit](#onofflinesubmit)
-- [onChatMessageVisitor](#onchatmessagevisitor)
-- [onChatMessageAgent](#onchatmessageagent)
-- [onChatMessageSystem](#onchatmessagesystem)
-- [onAgentJoinChat](#onagentjoinchat)
-- [onAgentLeaveChat](#onagentleavechat)
-- [onChatSatisfaction](#onchatsatisfaction)
-- [onVisitorNameChanged](#onvisitornamechanged)
-- [onFileUpload](#onfileupload)
-- [onTagsUpdated](#ontagsupdated)
-- [onUnreadCountChanged](#onunreadcountchanged)
-- [visitor](#visitor)
-- [maximize](#maximize)
-- [minimize](#minimize)
-- [toggle](#toggle)
-- [popup](#popup)
-- [getWindowType](#getwindowtype)
-- [showWidget](#showwidget)
-- [hideWidget](#hidewidget)
-- [toggleVisibility](#togglevisibility)
-- [getStatus](#getstatus)
-- [isChatMaximized](#ischatmaximized)
-- [isChatMinimized](#ischatminimized)
-- [isChatHidden](#ischathidden)
-- [isChatOngoing](#ischatongoing)
-- [isVisitorEngaged](#isvisitorengaged)
-- [onLoaded](#onloaded)
-- [onBeforeLoaded](#onbeforeloaded)
-- [widgetPosition](#widgetposition)
-- [endChat](#endchat)
-- [setAttributes](#setattributes)
-- [addEvent](#addevent)
-- [addTags](#addtags)
-- [removeTags](#removetags)
-- [secureMode](#securemode)
-- [customStyle](#customstyle)
+- [API Reference](#api-reference)
+  - [Table of contents](#table-of-contents)
+  - [onLoad](#onload)
+  - [onStatusChange](#onstatuschange)
+  - [onBeforeLoad](#onbeforeload)
+  - [onChatMaximized](#onchatmaximized)
+  - [onChatMinimized](#onchatminimized)
+  - [onChatHidden](#onchathidden)
+  - [onChatStarted](#onchatstarted)
+  - [onChatEnded](#onchatended)
+  - [onPrechatSubmit](#onprechatsubmit)
+  - [onOfflineSubmit](#onofflinesubmit)
+  - [onChatMessageVisitor](#onchatmessagevisitor)
+  - [onChatMessageAgent](#onchatmessageagent)
+  - [onChatMessageSystem](#onchatmessagesystem)
+  - [onAgentJoinChat](#onagentjoinchat)
+  - [onAgentLeaveChat](#onagentleavechat)
+  - [onChatSatisfaction](#onchatsatisfaction)
+  - [onVisitorNameChanged](#onvisitornamechanged)
+  - [onFileUpload](#onfileupload)
+  - [onTagsUpdated](#ontagsupdated)
+  - [onUnreadCountChanged](#onunreadcountchanged)
+  - [visitor](#visitor)
+  - [maximize](#maximize)
+  - [minimize](#minimize)
+  - [toggle](#toggle)
+  - [popup](#popup)
+  - [getWindowType](#getwindowtype)
+  - [showWidget](#showwidget)
+  - [hideWidget](#hidewidget)
+  - [toggleVisibility](#togglevisibility)
+  - [getStatus](#getstatus)
+  - [isChatMaximized](#ischatmaximized)
+  - [isChatMinimized](#ischatminimized)
+  - [isChatHidden](#ischathidden)
+  - [isChatOngoing](#ischatongoing)
+  - [isVisitorEngaged](#isvisitorengaged)
+  - [onLoaded](#onloaded)
+  - [onBeforeLoaded](#onbeforeloaded)
+  - [widgetPosition](#widgetposition)
+  - [endChat](#endchat)
+  - [setAttributes](#setattributes)
+  - [addEvent](#addevent)
+  - [addTags](#addtags)
+  - [removeTags](#removetags)
+  - [secureMode](#securemode)
+  - [customstyle](#customstyle)
+    - [zIndex](#zindex)
+    - [Visibility](#visibility)
 
 <br/>
 
@@ -63,14 +67,16 @@ pop out chat window.
 
 ```js
 function App() {
-    const onLoad = () => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onLoad(() => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -85,14 +91,16 @@ chat window.
 
 ```js
 function App() {
-    const onStatusChange = (status) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onStatusChange((status) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onStatusChange={onStatusChange}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -106,14 +114,16 @@ This callback is not supported in pop out chat window.
 
 ```js
 function App() {
-    const onBeforeLoad = () => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onBeforeLoad(() => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onBeforeLoad={onBeforeLoad}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -127,14 +137,16 @@ chat window.
 
 ```js
 function App() {
-    const onChatMaximized = () => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onChatMaximized(() => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onChatMaximized={onChatMaximized}/>
+                ref={$$tawkMessenger}/>
         </div>
     );
 }
@@ -148,14 +160,16 @@ chat window.
 
 ```js
 function App() {
-    const onChatMinimized = () => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onChatMinimized(() => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onChatMinimized={onChatMinimized}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -169,14 +183,16 @@ window.
 
 ```js
 function App() {
-    const onChatHidden = () => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onChatHidden(() => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onChatHidden={onChatHidden}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -189,14 +205,16 @@ Callback function invoked when the widget is started.
 
 ```js
 function App() {
-    const onChatStarted = () => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onChatStarted(() => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onChatStarted={onChatStarted}/>
+                ref={$$tawkMessenger}/>
         </div>
     );
 }
@@ -210,14 +228,16 @@ window.
 
 ```js
 function App() {
-    const onChatEnded = () => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onChatEnded(() => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onChatEnded={onChatEnded}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -231,14 +251,16 @@ the function. This callback is not supported in pop out chat window.
 
 ```js
 function App() {
-    const onPrechatSubmit = (data) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onPrechatSubmit((data) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onPrechatSubmit={onPrechatSubmit}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -253,14 +275,16 @@ callback is not supported in pop out chat window.
 
 ```js
 function App() {
-    const onOfflineSubmit = (data) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onOfflineSubmit((data) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onOfflineSubmit={onOfflineSubmit}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -274,14 +298,16 @@ function. This callback is not supported in pop out chat window.
 
 ```js
 function App() {
-    const onChatMessageVisitor = (message) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onChatMessageVisitor((message) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onChatMessageVisitor={onChatMessageVisitor}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -295,14 +321,16 @@ This callback is not supported in pop out chat window.
 
 ```js
 function App() {
-    const onChatMessageAgent = (message) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onChatMessageAgent((message) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onChatMessageAgent={onChatMessageAgent}/>
+                ref={$$tawkMessenger}/>
         </div>
     );
 }
@@ -316,14 +344,16 @@ This callback is not supported in pop out chat window.
 
 ```js
 function App() {
-    const onChatMessageSystem = (message) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onChatMessageSystem((message) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onChatMessageSystem={onChatMessageSystem}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -338,14 +368,16 @@ window.
 
 ```js
 function App() {
-    const onAgentJoinChat = (data) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onAgentJoinChat((data) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onAgentJoinChat={onAgentJoinChat}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -359,14 +391,16 @@ contain {name : ”, id : ”}. This callback is not supported in pop out chat w
 
 ```js
 function App() {
-    const onAgentLeaveChat = (data) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onAgentLeaveChat((data) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onAgentLeaveChat={onAgentLeaveChat}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -380,14 +414,16 @@ Callback function invoked when an agent leaves the chat. The satisfaction is pas
 
 ```js
 function App() {
-    const onChatSatisfaction = (satisfaction) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onChatSatisfaction((satisfaction) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onChatSatisfaction={onChatSatisfaction}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -401,14 +437,16 @@ the function. This callback is not supported in pop out chat window.
 
 ```js
 function App() {
-    const onVisitorNameChanged = (visitorName) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onVisitorNameChanged((visitorName) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onVisitorNameChanged={onVisitorNameChanged}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -422,14 +460,16 @@ function. This callback is not supported in pop out chat window.
 
 ```js
 function App() {
-    const onFileUpload = (link) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onFileUpload((link) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onFileUpload={onFileUpload}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -442,14 +482,16 @@ Callback function invoked when a tag is updated.
 
 ```js
 function App() {
-    const onTagsUpdated = (data) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onTagsUpdated((data) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onTagsUpdated={onTagsUpdated}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -462,14 +504,16 @@ Callback function that returns count of unread messages.
 
 ```js
 function App() {
-    const onUnreadCountChanged = (count) => {
+    let $tawkMessenger;
+
+    $tawkMessenger.onUnreadCountChanged((count) => {
         // place your code here
-    }
+    });
 
     return (
         <div>
             <TawkMessenger
-                onUnreadCountChanged={onUnreadCountChanged}/>
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -498,17 +542,16 @@ $tawkMessenger.visitor({
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.visitor({
             name : 'name',
             email : 'email@email.com'
         });
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={tawkMessenger}/>
         </div>
     );
@@ -528,14 +571,13 @@ $tawkMessenger.maximize();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.maximize();
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -555,14 +597,13 @@ $tawkMessenger.minimize();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.minimize();
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -582,14 +623,13 @@ $tawkMessenger.toggle();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.toggle();
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -609,14 +649,13 @@ $tawkMessenger.popup();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.popup();
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -636,18 +675,17 @@ $tawkMessenger.getWindowType();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         if ($tawkMessenger.getWindowType() === 'inline') {
             // do something if it's inline
         } else {
             // do something if it's embed
         }
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -667,14 +705,13 @@ $tawkMessenger.showWidget();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.showWidget();
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -694,14 +731,13 @@ $tawkMessenger.hideWidget();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.hideWidget();
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -721,14 +757,13 @@ $tawkMessenger.toggeVisibility();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.toggeVisibility();
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -748,7 +783,7 @@ $tawkMessenger.getStatus();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         const pageStatus = $tawkMessenger.getStatus();
 
         if (pageStatus === 'online') {
@@ -758,12 +793,11 @@ function App() {
         } else {
             // do something for offline
         }
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -783,16 +817,15 @@ $tawkMessenger.isChatMaximized();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         if ($tawkMessenger.isChatMaximized()) {
             // do something if it's maximized
         }
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -812,16 +845,15 @@ $tawkMessenger.isChatMinimized();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         if ($tawkMessenger.isChatMinimized()) {
             // do something if it's minimized
         }
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -841,16 +873,15 @@ $tawkMessenger.isChatHidden();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         if ($tawkMessenger.isChatHidden()) {
             // do something if chat widget is hidden
         }
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -870,16 +901,15 @@ $tawkMessenger.isChatOngoing();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         if ($tawkMessenger.isChatOngoing()) {
             // do something if there's ongoing chat
         }
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -900,16 +930,15 @@ $tawkMessenger.isVisitorEngaged();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         if ($tawkMessenger.isVisitorEngaged()) {
             // do something if visitor engaged in chat
         }
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -985,16 +1014,15 @@ $tawkMessenger.widgetPosition();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         if ($tawkMessenger.widgetPosition() === 'br') {
             // do something if the widget is at bottom right
         }
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -1014,14 +1042,13 @@ $tawkMessenger.endChat();
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.endChat();
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -1067,7 +1094,7 @@ $tawkMessenger.setAttributes(attributes, callback);
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.setAttributes({
             id : 'A1234',
             store : 'Midvalley'
@@ -1084,12 +1111,11 @@ function App() {
         }, function(error) {
             // do something if error
         });
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -1117,7 +1143,7 @@ $tawkMessenger.addEvent(eventName, metaData, callback);
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.addEvent(
             'requested-quotation',
             function(error) {
@@ -1138,12 +1164,11 @@ function App() {
                 // do something if error
             }
         );
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -1171,7 +1196,7 @@ $tawkMessenger.addTags(tags, callback);
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.addTags(
             [
                 'hello',
@@ -1181,12 +1206,11 @@ function App() {
                 // do something if error
             }
         );
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
@@ -1213,7 +1237,7 @@ $tawkMessenger.removeTags(tags, callback);
 function App() {
     let $tawkMessenger;
 
-    const onLoad = () => {
+    $tawkMessenger.onLoad(() => {
         $tawkMessenger.removeTags(
             [
                 'hello',
@@ -1223,12 +1247,11 @@ function App() {
                 // do something if error
             }
         );
-    };
+    });
 
     return (
         <div>
             <TawkMessenger
-                onLoad={onLoad}
                 ref={$tawkMessenger}/>
         </div>
     );
