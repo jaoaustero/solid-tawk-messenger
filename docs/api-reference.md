@@ -69,8 +69,10 @@ pop out chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            // place your code here
+        });
     });
 
     return (
@@ -93,8 +95,10 @@ chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onStatusChange((status) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onStatusChange((status) => {
+            // place your code here
+        });
     });
 
     return (
@@ -116,8 +120,10 @@ This callback is not supported in pop out chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onBeforeLoad(() => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onBeforeLoad(() => {
+            // place your code here
+        });
     });
 
     return (
@@ -139,8 +145,10 @@ chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onChatMaximized(() => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onChatMaximized(() => {
+            // place your code here
+        });
     });
 
     return (
@@ -162,8 +170,10 @@ chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onChatMinimized(() => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onChatMinimized(() => {
+            // place your code here
+        });
     });
 
     return (
@@ -185,8 +195,10 @@ window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onChatHidden(() => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onChatHidden(() => {
+            // place your code here
+        });
     });
 
     return (
@@ -207,8 +219,10 @@ Callback function invoked when the widget is started.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onChatStarted(() => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onChatStarted(() => {
+            // place your code here
+        });
     });
 
     return (
@@ -230,8 +244,10 @@ window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onChatEnded(() => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onChatEnded(() => {
+            // place your code here
+        });
     });
 
     return (
@@ -253,8 +269,10 @@ the function. This callback is not supported in pop out chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onPrechatSubmit((data) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onPrechatSubmit((data) => {
+            // place your code here
+        });
     });
 
     return (
@@ -277,8 +295,10 @@ callback is not supported in pop out chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onOfflineSubmit((data) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onOfflineSubmit((data) => {
+            // place your code here
+        });
     });
 
     return (
@@ -300,8 +320,10 @@ function. This callback is not supported in pop out chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onChatMessageVisitor((message) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onChatMessageVisitor((message) => {
+            // place your code here
+        });
     });
 
     return (
@@ -323,8 +345,10 @@ This callback is not supported in pop out chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onChatMessageAgent((message) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onChatMessageAgent((message) => {
+            // place your code here
+        });
     });
 
     return (
@@ -346,8 +370,10 @@ This callback is not supported in pop out chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onChatMessageSystem((message) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onChatMessageSystem((message) => {
+            // place your code here
+        });
     });
 
     return (
@@ -370,8 +396,10 @@ window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onAgentJoinChat((data) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onAgentJoinChat((data) => {
+            // place your code here
+        });
     });
 
     return (
@@ -393,8 +421,10 @@ contain {name : ”, id : ”}. This callback is not supported in pop out chat w
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onAgentLeaveChat((data) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onAgentLeaveChat((data) => {
+            // place your code here
+        });
     });
 
     return (
@@ -416,8 +446,10 @@ Callback function invoked when an agent leaves the chat. The satisfaction is pas
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onChatSatisfaction((satisfaction) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onChatSatisfaction((satisfaction) => {
+            // place your code here
+        });
     });
 
     return (
@@ -439,8 +471,10 @@ the function. This callback is not supported in pop out chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onVisitorNameChanged((visitorName) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onVisitorNameChanged((visitorName) => {
+            // place your code here
+        });
     });
 
     return (
@@ -462,8 +496,10 @@ function. This callback is not supported in pop out chat window.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onFileUpload((link) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onFileUpload((link) => {
+            // place your code here
+        });
     });
 
     return (
@@ -484,8 +520,10 @@ Callback function invoked when a tag is updated.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onTagsUpdated((data) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onTagsUpdated((data) => {
+            // place your code here
+        });
     });
 
     return (
@@ -506,8 +544,10 @@ Callback function that returns count of unread messages.
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onUnreadCountChanged((count) => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onUnreadCountChanged((count) => {
+            // place your code here
+        });
     });
 
     return (
@@ -542,10 +582,12 @@ $tawkMessenger.visitor({
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.visitor({
-            name : 'name',
-            email : 'email@email.com'
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.visitor({
+                name : 'name',
+                email : 'email@email.com'
+            });
         });
     });
 
@@ -571,8 +613,10 @@ $tawkMessenger.maximize();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.maximize();
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.maximize();
+        });
     });
 
     return (
@@ -597,8 +641,10 @@ $tawkMessenger.minimize();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.minimize();
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.minimize();
+        });
     });
 
     return (
@@ -623,8 +669,10 @@ $tawkMessenger.toggle();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.toggle();
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.toggle();
+        });
     });
 
     return (
@@ -649,8 +697,10 @@ $tawkMessenger.popup();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.popup();
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.popup();
+        });
     });
 
     return (
@@ -675,12 +725,14 @@ $tawkMessenger.getWindowType();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        if ($tawkMessenger.getWindowType() === 'inline') {
-            // do something if it's inline
-        } else {
-            // do something if it's embed
-        }
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            if ($tawkMessenger.getWindowType() === 'inline') {
+                // do something if it's inline
+            } else {
+                // do something if it's embed
+            }
+        });
     });
 
     return (
@@ -705,8 +757,10 @@ $tawkMessenger.showWidget();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.showWidget();
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.showWidget();
+        });
     });
 
     return (
@@ -731,8 +785,10 @@ $tawkMessenger.hideWidget();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.hideWidget();
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.hideWidget();
+        });
     });
 
     return (
@@ -757,8 +813,10 @@ $tawkMessenger.toggeVisibility();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.toggeVisibility();
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.toggeVisibility();
+        });
     });
 
     return (
@@ -783,16 +841,18 @@ $tawkMessenger.getStatus();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        const pageStatus = $tawkMessenger.getStatus();
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            const pageStatus = $tawkMessenger.getStatus();
 
-        if (pageStatus === 'online') {
-            // do something for online
-        } else if (pageStatus === 'away') {
-            // do something for away
-        } else {
-            // do something for offline
-        }
+            if (pageStatus === 'online') {
+                // do something for online
+            } else if (pageStatus === 'away') {
+                // do something for away
+            } else {
+                // do something for offline
+            }
+        });
     });
 
     return (
@@ -817,10 +877,12 @@ $tawkMessenger.isChatMaximized();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        if ($tawkMessenger.isChatMaximized()) {
-            // do something if it's maximized
-        }
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            if ($tawkMessenger.isChatMaximized()) {
+                // do something if it's maximized
+            }
+        });
     });
 
     return (
@@ -845,10 +907,12 @@ $tawkMessenger.isChatMinimized();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        if ($tawkMessenger.isChatMinimized()) {
-            // do something if it's minimized
-        }
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            if ($tawkMessenger.isChatMinimized()) {
+                // do something if it's minimized
+            }
+        });
     });
 
     return (
@@ -873,10 +937,12 @@ $tawkMessenger.isChatHidden();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        if ($tawkMessenger.isChatHidden()) {
-            // do something if chat widget is hidden
-        }
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            if ($tawkMessenger.isChatHidden()) {
+                // do something if chat widget is hidden
+            }
+        });
     });
 
     return (
@@ -901,10 +967,12 @@ $tawkMessenger.isChatOngoing();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        if ($tawkMessenger.isChatOngoing()) {
-            // do something if there's ongoing chat
-        }
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            if ($tawkMessenger.isChatOngoing()) {
+                // do something if there's ongoing chat
+            }
+        });
     });
 
     return (
@@ -930,10 +998,12 @@ $tawkMessenger.isVisitorEngaged();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        if ($tawkMessenger.isVisitorEngaged()) {
-            // do something if visitor engaged in chat
-        }
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            if ($tawkMessenger.isVisitorEngaged()) {
+                // do something if visitor engaged in chat
+            }
+        });
     });
 
     return (
@@ -958,11 +1028,11 @@ $tawkMessenger.onLoaded();
 function App() {
     let $tawkMessenger;
 
-    const todo = () => {
+    onMount(() => {
         if ($tawkMessenger.onLoaded()) {
             // place your code here
         }
-    };
+    });
 
     return (
         <div>
@@ -986,11 +1056,11 @@ $tawkMessenger.onBeforeLoaded();
 function App() {
     let $tawkMessenger;
 
-    const todo = () => {
+    onMount(() => {
         if ($tawkMessenger.onBeforeLoaded()) {
             // place your code here
         }
-    };
+    });
 
     return (
         <div>
@@ -1014,10 +1084,12 @@ $tawkMessenger.widgetPosition();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        if ($tawkMessenger.widgetPosition() === 'br') {
-            // do something if the widget is at bottom right
-        }
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            if ($tawkMessenger.widgetPosition() === 'br') {
+                // do something if the widget is at bottom right
+            }
+        });
     });
 
     return (
@@ -1042,8 +1114,10 @@ $tawkMessenger.endChat();
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.endChat();
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.endChat();
+        });
     });
 
     return (
@@ -1094,22 +1168,24 @@ $tawkMessenger.setAttributes(attributes, callback);
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.setAttributes({
-            id : 'A1234',
-            store : 'Midvalley'
-        }, function(error) {
-            // do something if error
-        });
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.setAttributes({
+                id : 'A1234',
+                store : 'Midvalley'
+            }, function(error) {
+                // do something if error
+            });
 
-        // Example for setting name and email
+            // Example for setting name and email
 
-        $tawkMessenger.setAttributes({
-            name : 'name',
-            store : 'name@email.com',
-            hash : 'has value'
-        }, function(error) {
-            // do something if error
+            $tawkMessenger.setAttributes({
+                name : 'name',
+                store : 'name@email.com',
+                hash : 'has value'
+            }, function(error) {
+                // do something if error
+            });
         });
     });
 
@@ -1143,27 +1219,29 @@ $tawkMessenger.addEvent(eventName, metaData, callback);
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.addEvent(
-            'requested-quotation',
-            function(error) {
-                // do something if error
-            }
-        );
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.addEvent(
+                'requested-quotation',
+                function(error) {
+                    // do something if error
+                }
+            );
 
-        // Example with metadata
+            // Example with metadata
 
-        $tawkMessenger.addEvent(
-            'requested-quotation',
-            {
-                sku : 'A0012',
-                name : 'Jeans',
-                price : '50'
-            }
-            function(error) {
-                // do something if error
-            }
-        );
+            $tawkMessenger.addEvent(
+                'requested-quotation',
+                {
+                    sku : 'A0012',
+                    name : 'Jeans',
+                    price : '50'
+                }
+                function(error) {
+                    // do something if error
+                }
+            );
+        });
     });
 
     return (
@@ -1196,16 +1274,18 @@ $tawkMessenger.addTags(tags, callback);
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.addTags(
-            [
-                'hello',
-                'world'
-            ],
-            function(error) {
-                // do something if error
-            }
-        );
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.addTags(
+                [
+                    'hello',
+                    'world'
+                ],
+                function(error) {
+                    // do something if error
+                }
+            );
+        });
     });
 
     return (
@@ -1237,16 +1317,18 @@ $tawkMessenger.removeTags(tags, callback);
 function App() {
     let $tawkMessenger;
 
-    $tawkMessenger.onLoad(() => {
-        $tawkMessenger.removeTags(
-            [
-                'hello',
-                'world'
-            ],
-            function(error) {
-                // do something if error
-            }
-        );
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.removeTags(
+                [
+                    'hello',
+                    'world'
+                ],
+                function(error) {
+                    // do something if error
+                }
+            );
+        });
     });
 
     return (

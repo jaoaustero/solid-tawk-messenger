@@ -35,8 +35,10 @@ Using the API callbacks, simply pass a function props then it will emit by the p
 function App() {
     let $tawkMessenger;
     
-    $tawkMessenger.onLoad(() => {
-        // place your code here
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            // place your code here
+        });
     });
 
     return (
