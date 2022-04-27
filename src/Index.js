@@ -206,41 +206,107 @@ const TawkMessenger = (props) => {
 	 * API for calling an action on the widget
 	 */
 	const mapActions = {
-		maximize: () => window.Tawk_API.maximize(),
-		minimize: () => window.Tawk_API.minimize(),
-		toggle: () => window.Tawk_API.toggle(),
-		popup: () => window.Tawk_API.popup(),
-		showWidget: () => window.Tawk_API.showWidget(),
-		hideWidget: () => window.Tawk_API.hideWidget(),
-		toggleVisibility: () => window.Tawk_API.toggleVisibility(),
-		endChat: () => window.Tawk_API.endChat()
+		maximize : () => {
+			window.Tawk_API.maximize();
+		},
+
+		minimize : () => {
+			window.Tawk_API.minimize();
+		},
+
+		toggle : () => {
+			window.Tawk_API.toggle();
+		},
+
+		popup : () => {
+			window.Tawk_API.popup();
+		},
+
+		showWidget : () => { 
+			window.Tawk_API.showWidget();
+		},
+
+		hideWidget : () => {
+			window.Tawk_API.hideWidget();
+		},
+
+		toggleVisibility : () => {
+			window.Tawk_API.toggleVisibility();
+		},
+
+		endChat : () => {
+			window.Tawk_API.endChat();
+		}
 	};
 
 	/**
 	 * API for setting a data on the widget
 	 */
 	const mapGetters = {
-		getWindowType: () => window.Tawk_API.getWindowType(),
-		getStatus: () => window.Tawk_API.getStatus(),
-		isChatMaximized: () => window.Tawk_API.isChatMaximized(),
-		isChatMinimized: () => window.Tawk_API.isChatMinimized(),
-		isChatHidden: () => window.Tawk_API.isChatHidden(),
-		isChatOngoing: () => window.Tawk_API.isChatOngoing(),
-		isVisitorEngaged: () => window.Tawk_API.isVisitorEngaged(),
-		onLoaded: () => window.Tawk_API.onLoaded,
-		onBeforeLoaded: () => window.Tawk_API.onBeforeLoaded,
-		widgetPosition: () => window.Tawk_API.widgetPosition()
+		getWindowType : () => {
+			window.Tawk_API.getWindowType();
+		},
+
+		getStatus : () => {
+			window.Tawk_API.getStatus();
+		},
+
+		isChatMaximized : () => {
+			window.Tawk_API.isChatMaximized();
+		},
+
+		isChatMinimized : () => {
+			window.Tawk_API.isChatMinimized();
+		},
+
+		isChatHidden : () => {
+			window.Tawk_API.isChatHidden();
+		},
+
+		isChatOngoing : () => {
+			window.Tawk_API.isChatOngoing();
+		},
+
+		isVisitorEngaged : () => {
+			window.Tawk_API.isVisitorEngaged();
+		},
+
+		onLoaded : () => {
+			window.Tawk_API.onLoaded;
+		},
+
+		onBeforeLoaded : () => {
+			window.Tawk_API.onBeforeLoaded;
+		},
+
+		widgetPosition : () => {
+			window.Tawk_API.widgetPosition();
+		}
 	};
 
 	/**
 	 * API for setting a data on the widget
 	 */
 	const mapSetters = {
-		visitor: (data) => (window.Tawk_API.visitor = data),
-		setAttributes: (attribute, callback) => window.Tawk_API.setAttributes(attribute, callback),
-		addEvent: (event, metadata, callback) => window.Tawk_API.addEvent(event, metadata, callback),
-		addTags: (tags, callback) => window.Tawk_API.addTags(tags, callback),
-		removeTags: (tags, callback) => window.Tawk_API.removeTags(tags, callback)
+		visitor : (data) => {
+			window.Tawk_API.visitor = data;
+		},
+
+		setAttributes : (attribute, callback) => {
+			window.Tawk_API.setAttributes(attribute, callback);
+		},
+
+		addEvent : (event, metadata, callback) => {
+			window.Tawk_API.addEvent(event, metadata, callback);
+		},
+
+		addTags : (tags, callback) => {
+			window.Tawk_API.addTags(tags, callback);
+		},
+
+		removeTags : (tags, callback) => {
+			window.Tawk_API.removeTags(tags, callback);
+		}
 	};
 
 	/**
