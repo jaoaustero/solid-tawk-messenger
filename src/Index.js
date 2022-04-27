@@ -28,30 +28,6 @@ const TawkMessenger = (props) => {
 			 * Reference
 			 */
 			ref: () => {},
-
-			/**
-			 * Callbacks
-			 */
-			onLoad: () => {},
-			onStatusChange: () => {},
-			onBeforeLoad: () => {},
-			onChatMaximized: () => {},
-			onChatMinimized: () => {},
-			onChatHidden: () => {},
-			onChatStarted: () => {},
-			onChatEnded: () => {},
-			onPrechatSubmit: () => {},
-			onOfflineSubmit: () => {},
-			onChatMessageVisitor: () => {},
-			onChatMessageAgent: () => {},
-			onChatMessageSystem: () => {},
-			onAgentJoinChat: () => {},
-			onAgentLeaveChat: () => {},
-			onChatSatisfaction: () => {},
-			onVisitorNameChanged: () => {},
-			onFileUpload: () => {},
-			onTagsUpdated: () => {},
-			onUnreadCountChanged: () => {}
 		},
 		props
 	);
@@ -98,94 +74,132 @@ const TawkMessenger = (props) => {
 			widgetId: merged.widgetId,
 			embedId: merged.embedId
 		});
-
-		mapCallbacks();
 	};
 
 	/**
 	 * API for listening an event emitting
 	 * inside of the widget
 	 */
-	const mapCallbacks = () => {
-		window.addEventListener('tawkLoad', () => {
-			merged.onLoad();
-		});
+	const mapCallbacks = {
+		onLoad : (callback) => {
+			window.addEventListener('tawkLoad', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkStatusChange', (status) => {
-			merged.onStatusChange(status.detail);
-		});
+		onStatusChange : (callback) => {
+			window.addEventListener('tawkStatusChange', (status) => {
+				callback(status.detail);
+			});
+		},
+		
+		onBeforeLoad : (callback) => {
+			window.addEventListener('tawkBeforeLoad', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkBeforeLoad', () => {
-			merged.onBeforeLoad();
-		});
+		onChatMaximized : (callback) => {
+			window.addEventListener('tawkChatMaximized', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatMaximized', () => {
-			merged.onChatMaximized();
-		});
+		onChatMinimized : (callback) => {
+			window.addEventListener('tawkChatMinimized', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatMinimized', () => {
-			merged.onChatMinimized();
-		});
+		onChatHidden : (callback) => {
+			window.addEventListener('tawkChatHidden', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatHidden', () => {
-			merged.onChatHidden();
-		});
+		onChatStarted : (callback) => {
+			window.addEventListener('tawkChatStarted', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatStarted', () => {
-			merged.onChatStarted();
-		});
+		onChatEnded : (callback) => {
+			window.addEventListener('tawkChatEnded', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatEnded', () => {
-			merged.onChatEnded();
-		});
+		onPrechatSubmit : (callback) => {
+			window.addEventListener('tawkPrechatSubmit', (data) => {
+				callback(data.detail);
+			});
+		},
 
-		window.addEventListener('tawkPrechatSubmit', (data) => {
-			merged.onPrechatSubmit(data.detail);
-		});
+		onOfflineSubmit : (callback) => {
+			window.addEventListener('tawkOfflineSubmit', (data) => {
+				callback(data.detail);
+			});
+		},
 
-		window.addEventListener('tawkOfflineSubmit', (data) => {
-			merged.onOfflineSubmit(data.detail);
-		});
+		onChatMessageVisitor : (callback) => {
+			window.addEventListener('tawkChatMessageVisitor', (message) => {
+				callback(message.detail);
+			});
+		},
 
-		window.addEventListener('tawkChatMessageVisitor', (message) => {
-			merged.onChatMessageVisitor(message.detail);
-		});
+		onChatMessageAgent : (callback) => {
+			window.addEventListener('tawkChatMessageAgent', (message) => {
+				callback(message.detail);
+			});
+		},
 
-		window.addEventListener('tawkChatMessageAgent', (message) => {
-			merged.onChatMessageAgent(message.detail);
-		});
+		onChatMessageSystem : (callback) => {
+			window.addEventListener('tawkChatMessageSystem', (message) => {
+				callback(message.detail);
+			});
+		},
 
-		window.addEventListener('tawkChatMessageSystem', (message) => {
-			merged.onChatMessageSystem(message.detail);
-		});
+		onAgentJoinChat : (callback) => {
+			window.addEventListener('tawkAgentJoinChat', (data) => {
+				callback(data.detail);
+			});
+		},
+		
+		onAgentLeaveChat : (callback) => {
+			window.addEventListener('tawkAgentLeaveChat', (data) => {
+				callback(data.detail);
+			});
+		},
 
-		window.addEventListener('tawkAgentJoinChat', (data) => {
-			merged.onAgentJoinChat(data.detail);
-		});
+		onChatSatisfaction : (callback) => {
+			window.addEventListener('tawkChatSatisfaction', (satisfaction) => {
+				callback(satisfaction.detail);
+			});
+		},
 
-		window.addEventListener('tawkAgentLeaveChat', (data) => {
-			merged.onAgentLeaveChat(data.detail);
-		});
+		onVisitorNameChanged : (callback) => {
+			window.addEventListener('tawkVisitorNameChanged', (visitorName) => {
+				callback(visitorName.detail);
+			});
+		},
 
-		window.addEventListener('tawkChatSatisfaction', (satisfaction) => {
-			merged.onChatSatisfaction(satisfaction.detail);
-		});
+		onFileUpload : (callback) => {
+			window.addEventListener('tawkFileUpload', (link) => {
+				callback(link.detail);
+			});
+		},
 
-		window.addEventListener('tawkVisitorNameChanged', (visitorName) => {
-			merged.onVisitorNameChanged(visitorName.detail);
-		});
+		onTagsUpdated : (callback) => {
+			window.addEventListener('tawkTagsUpdated', (data) => {
+				callback(data.detail);
+			});
+		},
 
-		window.addEventListener('tawkFileUpload', (link) => {
-			merged.onFileUpload(link.detail);
-		});
-
-		window.addEventListener('tawkTagsUpdated', (data) => {
-			merged.onTagsUpdated(data.detail);
-		});
-
-		window.addEventListener('tawkUnreadCountChanged', (data) => {
-			merged.onUnreadCountChanged(data.detail);
-		});
+		onUnreadCountChanged : (callback) => {
+			window.addEventListener('tawkUnreadCountChanged', (data) => {
+				callback(data.detail);
+			});
+		}
 	};
 
 	/**
@@ -233,6 +247,7 @@ const TawkMessenger = (props) => {
 	 * Expose the Tawk API functions
 	 */
 	merged.ref({
+		...mapCallbacks,
 		...mapGetters,
 		...mapActions,
 		...mapSetters
