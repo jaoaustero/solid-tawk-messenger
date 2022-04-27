@@ -36,5 +36,9 @@
     "type": "git",
     "url": "https://github.com/jaoaustero/solid-tawk-messenger.git",
     "repository": "jaoaustero/solid-tawk-messenger"
+  },
+  "bugs": {
+    "url": "https://github.com/jaoaustero/solid-tawk-messenger/issues",
+    "email": "jerald.austero0229@gmail.com"
   }
 }
