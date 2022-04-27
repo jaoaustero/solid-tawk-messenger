@@ -28,30 +28,6 @@ const TawkMessenger = (props) => {
 			 * Reference
 			 */
 			ref: () => {},
-
-			/**
-			 * Callbacks
-			 */
-			onLoad: () => {},
-			onStatusChange: () => {},
-			onBeforeLoad: () => {},
-			onChatMaximized: () => {},
-			onChatMinimized: () => {},
-			onChatHidden: () => {},
-			onChatStarted: () => {},
-			onChatEnded: () => {},
-			onPrechatSubmit: () => {},
-			onOfflineSubmit: () => {},
-			onChatMessageVisitor: () => {},
-			onChatMessageAgent: () => {},
-			onChatMessageSystem: () => {},
-			onAgentJoinChat: () => {},
-			onAgentLeaveChat: () => {},
-			onChatSatisfaction: () => {},
-			onVisitorNameChanged: () => {},
-			onFileUpload: () => {},
-			onTagsUpdated: () => {},
-			onUnreadCountChanged: () => {}
 		},
 		props
 	);
@@ -98,141 +74,246 @@ const TawkMessenger = (props) => {
 			widgetId: merged.widgetId,
 			embedId: merged.embedId
 		});
-
-		mapCallbacks();
 	};
 
 	/**
 	 * API for listening an event emitting
 	 * inside of the widget
 	 */
-	const mapCallbacks = () => {
-		window.addEventListener('tawkLoad', () => {
-			merged.onLoad();
-		});
+	const mapCallbacks = {
+		onLoad : (callback) => {
+			window.addEventListener('tawkLoad', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkStatusChange', (status) => {
-			merged.onStatusChange(status.detail);
-		});
+		onStatusChange : (callback) => {
+			window.addEventListener('tawkStatusChange', (status) => {
+				callback(status.detail);
+			});
+		},
+		
+		onBeforeLoad : (callback) => {
+			window.addEventListener('tawkBeforeLoad', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkBeforeLoad', () => {
-			merged.onBeforeLoad();
-		});
+		onChatMaximized : (callback) => {
+			window.addEventListener('tawkChatMaximized', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatMaximized', () => {
-			merged.onChatMaximized();
-		});
+		onChatMinimized : (callback) => {
+			window.addEventListener('tawkChatMinimized', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatMinimized', () => {
-			merged.onChatMinimized();
-		});
+		onChatHidden : (callback) => {
+			window.addEventListener('tawkChatHidden', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatHidden', () => {
-			merged.onChatHidden();
-		});
+		onChatStarted : (callback) => {
+			window.addEventListener('tawkChatStarted', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatStarted', () => {
-			merged.onChatStarted();
-		});
+		onChatEnded : (callback) => {
+			window.addEventListener('tawkChatEnded', () => {
+				callback();
+			});
+		},
 
-		window.addEventListener('tawkChatEnded', () => {
-			merged.onChatEnded();
-		});
+		onPrechatSubmit : (callback) => {
+			window.addEventListener('tawkPrechatSubmit', (data) => {
+				callback(data.detail);
+			});
+		},
 
-		window.addEventListener('tawkPrechatSubmit', (data) => {
-			merged.onPrechatSubmit(data.detail);
-		});
+		onOfflineSubmit : (callback) => {
+			window.addEventListener('tawkOfflineSubmit', (data) => {
+				callback(data.detail);
+			});
+		},
 
-		window.addEventListener('tawkOfflineSubmit', (data) => {
-			merged.onOfflineSubmit(data.detail);
-		});
+		onChatMessageVisitor : (callback) => {
+			window.addEventListener('tawkChatMessageVisitor', (message) => {
+				callback(message.detail);
+			});
+		},
 
-		window.addEventListener('tawkChatMessageVisitor', (message) => {
-			merged.onChatMessageVisitor(message.detail);
-		});
+		onChatMessageAgent : (callback) => {
+			window.addEventListener('tawkChatMessageAgent', (message) => {
+				callback(message.detail);
+			});
+		},
 
-		window.addEventListener('tawkChatMessageAgent', (message) => {
-			merged.onChatMessageAgent(message.detail);
-		});
+		onChatMessageSystem : (callback) => {
+			window.addEventListener('tawkChatMessageSystem', (message) => {
+				callback(message.detail);
+			});
+		},
 
-		window.addEventListener('tawkChatMessageSystem', (message) => {
-			merged.onChatMessageSystem(message.detail);
-		});
+		onAgentJoinChat : (callback) => {
+			window.addEventListener('tawkAgentJoinChat', (data) => {
+				callback(data.detail);
+			});
+		},
+		
+		onAgentLeaveChat : (callback) => {
+			window.addEventListener('tawkAgentLeaveChat', (data) => {
+				callback(data.detail);
+			});
+		},
 
-		window.addEventListener('tawkAgentJoinChat', (data) => {
-			merged.onAgentJoinChat(data.detail);
-		});
+		onChatSatisfaction : (callback) => {
+			window.addEventListener('tawkChatSatisfaction', (satisfaction) => {
+				callback(satisfaction.detail);
+			});
+		},
 
-		window.addEventListener('tawkAgentLeaveChat', (data) => {
-			merged.onAgentLeaveChat(data.detail);
-		});
+		onVisitorNameChanged : (callback) => {
+			window.addEventListener('tawkVisitorNameChanged', (visitorName) => {
+				callback(visitorName.detail);
+			});
+		},
 
-		window.addEventListener('tawkChatSatisfaction', (satisfaction) => {
-			merged.onChatSatisfaction(satisfaction.detail);
-		});
+		onFileUpload : (callback) => {
+			window.addEventListener('tawkFileUpload', (link) => {
+				callback(link.detail);
+			});
+		},
 
-		window.addEventListener('tawkVisitorNameChanged', (visitorName) => {
-			merged.onVisitorNameChanged(visitorName.detail);
-		});
+		onTagsUpdated : (callback) => {
+			window.addEventListener('tawkTagsUpdated', (data) => {
+				callback(data.detail);
+			});
+		},
 
-		window.addEventListener('tawkFileUpload', (link) => {
-			merged.onFileUpload(link.detail);
-		});
-
-		window.addEventListener('tawkTagsUpdated', (data) => {
-			merged.onTagsUpdated(data.detail);
-		});
-
-		window.addEventListener('tawkUnreadCountChanged', (data) => {
-			merged.onUnreadCountChanged(data.detail);
-		});
+		onUnreadCountChanged : (callback) => {
+			window.addEventListener('tawkUnreadCountChanged', (data) => {
+				callback(data.detail);
+			});
+		}
 	};
 
 	/**
 	 * API for calling an action on the widget
 	 */
 	const mapActions = {
-		maximize: () => window.Tawk_API.maximize(),
-		minimize: () => window.Tawk_API.minimize(),
-		toggle: () => window.Tawk_API.toggle(),
-		popup: () => window.Tawk_API.popup(),
-		showWidget: () => window.Tawk_API.showWidget(),
-		hideWidget: () => window.Tawk_API.hideWidget(),
-		toggleVisibility: () => window.Tawk_API.toggleVisibility(),
-		endChat: () => window.Tawk_API.endChat()
+		maximize : () => {
+			window.Tawk_API.maximize();
+		},
+
+		minimize : () => {
+			window.Tawk_API.minimize();
+		},
+
+		toggle : () => {
+			window.Tawk_API.toggle();
+		},
+
+		popup : () => {
+			window.Tawk_API.popup();
+		},
+
+		showWidget : () => { 
+			window.Tawk_API.showWidget();
+		},
+
+		hideWidget : () => {
+			window.Tawk_API.hideWidget();
+		},
+
+		toggleVisibility : () => {
+			window.Tawk_API.toggleVisibility();
+		},
+
+		endChat : () => {
+			window.Tawk_API.endChat();
+		}
 	};
 
 	/**
 	 * API for setting a data on the widget
 	 */
 	const mapGetters = {
-		getWindowType: () => window.Tawk_API.getWindowType(),
-		getStatus: () => window.Tawk_API.getStatus(),
-		isChatMaximized: () => window.Tawk_API.isChatMaximized(),
-		isChatMinimized: () => window.Tawk_API.isChatMinimized(),
-		isChatHidden: () => window.Tawk_API.isChatHidden(),
-		isChatOngoing: () => window.Tawk_API.isChatOngoing(),
-		isVisitorEngaged: () => window.Tawk_API.isVisitorEngaged(),
-		onLoaded: () => window.Tawk_API.onLoaded,
-		onBeforeLoaded: () => window.Tawk_API.onBeforeLoaded,
-		widgetPosition: () => window.Tawk_API.widgetPosition()
+		getWindowType : () => {
+			window.Tawk_API.getWindowType();
+		},
+
+		getStatus : () => {
+			window.Tawk_API.getStatus();
+		},
+
+		isChatMaximized : () => {
+			window.Tawk_API.isChatMaximized();
+		},
+
+		isChatMinimized : () => {
+			window.Tawk_API.isChatMinimized();
+		},
+
+		isChatHidden : () => {
+			window.Tawk_API.isChatHidden();
+		},
+
+		isChatOngoing : () => {
+			window.Tawk_API.isChatOngoing();
+		},
+
+		isVisitorEngaged : () => {
+			window.Tawk_API.isVisitorEngaged();
+		},
+
+		onLoaded : () => {
+			window.Tawk_API.onLoaded;
+		},
+
+		onBeforeLoaded : () => {
+			window.Tawk_API.onBeforeLoaded;
+		},
+
+		widgetPosition : () => {
+			window.Tawk_API.widgetPosition();
+		}
 	};
 
 	/**
 	 * API for setting a data on the widget
 	 */
 	const mapSetters = {
-		visitor: (data) => (window.Tawk_API.visitor = data),
-		setAttributes: (attribute, callback) => window.Tawk_API.setAttributes(attribute, callback),
-		addEvent: (event, metadata, callback) => window.Tawk_API.addEvent(event, metadata, callback),
-		addTags: (tags, callback) => window.Tawk_API.addTags(tags, callback),
-		removeTags: (tags, callback) => window.Tawk_API.removeTags(tags, callback)
+		visitor : (data) => {
+			window.Tawk_API.visitor = data;
+		},
+
+		setAttributes : (attribute, callback) => {
+			window.Tawk_API.setAttributes(attribute, callback);
+		},
+
+		addEvent : (event, metadata, callback) => {
+			window.Tawk_API.addEvent(event, metadata, callback);
+		},
+
+		addTags : (tags, callback) => {
+			window.Tawk_API.addTags(tags, callback);
+		},
+
+		removeTags : (tags, callback) => {
+			window.Tawk_API.removeTags(tags, callback);
+		}
 	};
 
 	/**
 	 * Expose the Tawk API functions
 	 */
 	merged.ref({
+		...mapCallbacks,
 		...mapGetters,
 		...mapActions,
 		...mapSetters
