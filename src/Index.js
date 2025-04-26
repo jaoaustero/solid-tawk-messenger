@@ -324,7 +324,7 @@ const TawkMessenger = (props) => {
 
 		switchWidget : (data, callback) => {
 			window.Tawk_API.switchWidget(data, callback);
-		},
+		}
 	};
 
 	/**
