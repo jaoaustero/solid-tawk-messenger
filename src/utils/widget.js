@@ -4,7 +4,7 @@
 /**
  * @param {Object} - Tawk widget default properties
  */
-const loadScript = ({ propertyId = '', widgetId = '', embedId = '' }) => {
+const loadScript = ({ propertyId = '', widgetId = '', embedId = '', autoStart = true }) => {
 	if (embedId.length) {
 		/**
 		 * If the element with embedId as id we will create a new clement
@@ -17,6 +17,10 @@ const loadScript = ({ propertyId = '', widgetId = '', embedId = '' }) => {
 		}
 
 		Tawk_API.embedded = embedId;
+	}
+
+	if (!autoStart) {
+		window.Tawk_API.autoStart = autoStart;
 	}
 
 	const script = document.createElement('script');

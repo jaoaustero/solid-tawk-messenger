@@ -25,6 +25,11 @@ const TawkMessenger = (props) => {
 			customStyle: {},
 
 			/**
+			 * Autostart
+			 */
+			autoStart: true,
+
+			/**
 			 * Reference
 			 */
 			ref: () => {},
@@ -72,7 +77,8 @@ const TawkMessenger = (props) => {
 		loadScript({
 			propertyId: merged.propertyId,
 			widgetId: merged.widgetId,
-			embedId: merged.embedId
+			embedId: merged.embedId,
+			autoStart: merged.autoStart
 		});
 	};
 
@@ -206,6 +212,14 @@ const TawkMessenger = (props) => {
 	 * API for calling an action on the widget
 	 */
 	const mapActions = {
+		start : () => {
+			window.Tawk_API.start();
+		},
+
+		shutdown : () => {
+			window.Tawk_API.shutdown();
+		},
+
 		maximize : () => {
 			window.Tawk_API.maximize();
 		},
@@ -306,7 +320,11 @@ const TawkMessenger = (props) => {
 
 		removeTags : (tags, callback) => {
 			window.Tawk_API.removeTags(tags, callback);
-		}
+		},
+
+		switchWidget : (data, callback) => {
+			window.Tawk_API.switchWidget(data, callback);
+		},
 	};
 
 	/**
