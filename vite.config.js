@@ -8,7 +8,7 @@ export default defineConfig({
 		target: 'esnext',
 		polyfillDynamicImport: false,
 		lib: {
-			entry: path.resolve(__dirname, 'src/index.js'),
+			entry: path.resolve(__dirname, 'src/Index.js'),
 			name: 'solid-tawk-messenger',
 			fileName: ($format) => `solid-tawk-messenger.${$format}.js`,
 		},
