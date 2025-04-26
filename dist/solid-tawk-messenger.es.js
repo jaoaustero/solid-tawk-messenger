@@ -19,7 +19,7 @@ const isValidString = (type, value) => {
 /**
  * @param {Object} - Tawk widget default properties
  */
-const loadScript = ({ propertyId = '', widgetId = '', embedId = '' }) => {
+const loadScript = ({ propertyId = '', widgetId = '', embedId = '', autoStart = true }) => {
 	if (embedId.length) {
 		/**
 		 * If the element with embedId as id we will create a new clement
@@ -32,6 +32,10 @@ const loadScript = ({ propertyId = '', widgetId = '', embedId = '' }) => {
 		}
 
 		Tawk_API.embedded = embedId;
+	}
+
+	if (!autoStart) {
+		window.Tawk_API.autoStart = autoStart;
 	}
 
 	const script = document.createElement('script');
@@ -64,6 +68,11 @@ const TawkMessenger = (props) => {
 			 * Custom style
 			 */
 			customStyle: {},
+
+			/**
+			 * Autostart
+			 */
+			autoStart: true,
 
 			/**
 			 * Reference
@@ -113,7 +122,8 @@ const TawkMessenger = (props) => {
 		loadScript({
 			propertyId: merged.propertyId,
 			widgetId: merged.widgetId,
-			embedId: merged.embedId
+			embedId: merged.embedId,
+			autoStart: merged.autoStart
 		});
 	};
 
@@ -247,6 +257,14 @@ const TawkMessenger = (props) => {
 	 * API for calling an action on the widget
 	 */
 	const mapActions = {
+		start : () => {
+			window.Tawk_API.start();
+		},
+
+		shutdown : () => {
+			window.Tawk_API.shutdown();
+		},
+
 		maximize : () => {
 			window.Tawk_API.maximize();
 		},
@@ -347,6 +365,10 @@ const TawkMessenger = (props) => {
 
 		removeTags : (tags, callback) => {
 			window.Tawk_API.removeTags(tags, callback);
+		},
+
+		switchWidget : (data, callback) => {
+			window.Tawk_API.switchWidget(data, callback);
 		}
 	};
 
