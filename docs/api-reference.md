@@ -32,6 +32,9 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
   - [onTagsUpdated](#ontagsupdated)
   - [onUnreadCountChanged](#onunreadcountchanged)
   - [visitor](#visitor)
+  - [autoStart](#autostart)
+  - [start](#start)
+  - [shutdown](#shutdown)
   - [maximize](#maximize)
   - [minimize](#minimize)
   - [toggle](#toggle)
@@ -55,6 +58,7 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
   - [addTags](#addtags)
   - [removeTags](#removetags)
   - [secureMode](#securemode)
+  - [switchWidget](#switchwidget)
   - [customstyle](#customstyle)
     - [zIndex](#zindex)
     - [Visibility](#visibility)
@@ -595,6 +599,79 @@ function App() {
         <div>
             <TawkMessenger
                 ref={tawkMessenger}/>
+        </div>
+    );
+}
+```
+
+<br/>
+
+## autoStart
+If set to true, it will auto-start the Tawk socket connection for chat services. If set to false,
+you will need to manually call the start API. It will not register and connect to the dashboard
+if this is set to false.
+
+```js
+function App() {
+    let $tawkMessenger;
+
+    return (
+        <TawkMessenger
+            propertyId="property_id"
+            widgetId="widget_id"
+            autoStart={false}
+            ref={$tawkMessenger}/>
+    );
+}
+```
+
+<br/>
+
+## start
+Start the tawk socket connection.
+
+```js
+$tawkMessenger.start();
+
+// Example
+
+function App() {
+    let $tawkMessenger;
+
+    onMount(() => {
+        $tawkMessenger.start();
+    });
+
+    return (
+        <div>
+            <TawkMessenger
+                ref={$tawkMessenger}/>
+        </div>
+    );
+}
+```
+
+<br/>
+
+## shutdown
+End the tawk socket connection.
+
+```js
+$tawkMessenger.shutdown();
+
+// Example
+
+function App() {
+    let $tawkMessenger;
+
+    onCleanup(() => {
+        $tawkMessenger.shutdown();
+    });
+
+    return (
+        <div>
+            <TawkMessenger
+                ref={$tawkMessenger}/>
         </div>
     );
 }
@@ -1357,6 +1434,43 @@ $tawkMessenger.visitor({
     email : 'email@email.com'
     hash : '<calculate-hash>'
 });
+```
+
+<br/>
+
+## switchWidget
+Disconnect the current widget connection, logout if it has existing user login and switch to
+another widget.
+
+```js
+$tawkMessenger.switchWidget(data, callback);
+
+// Example
+
+function App() {
+    let $tawkMessenger;
+
+    onMount(() => {
+        $tawkMessenger.onLoad(() => {
+            $tawkMessenger.switchWidget(
+                {
+                    propertyId : 'property_id',
+                    widgetId : 'widget_id'
+                },
+                function() {
+                    // do something
+                }
+            );
+        });
+    });
+
+    return (
+        <div>
+            <TawkMessenger
+                ref={$tawkMessenger}/>
+        </div>
+    );
+}
 ```
 
 <br/>
